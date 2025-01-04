@@ -1,11 +1,15 @@
 import json
+import os
 from decimal import Decimal
 
 from app.car import Car
 from app.customer import Customer
 from app.shop import Shop
 
-with open("D:/GitHubTasks/py-shop-trip/app/config.json", "r") as config_file:
+current_dir = os.path.dirname(os.path.abspath(__file__))
+config_file_path = os.path.join(current_dir, "config.json")
+
+with open(config_file_path, "r") as config_file:
     information = json.load(config_file)
 
 FUEL_PRICE = information["FUEL_PRICE"]
