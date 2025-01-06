@@ -12,7 +12,7 @@ config_file_path = os.path.join(current_dir, "config.json")
 with open(config_file_path, "r") as config_file:
     information = json.load(config_file)
 
-FUEL_PRICE = information["FUEL_PRICE"]
+FUEL_PRICE = Decimal(information["FUEL_PRICE"])
 
 customers_inform = information["customers"]
 all_customers = []
